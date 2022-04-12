@@ -27,7 +27,6 @@ public class ChessView extends View {
     float grid = Float.parseFloat(system[4]);
     float[] apple;
 
-    int type;
     int edge = 15;
     int win = Integer.parseInt(system[3]);
     static int blackScore = Integer.parseInt(system[6]);
@@ -105,23 +104,21 @@ public class ChessView extends View {
 
                     case 1:
 
-                        type = 1;
                         paint.setColor(blackChess);
 
                         break;
 
                     case 2:
 
-                        type = 2;
                         paint.setColor(whiteChess);
 
                         break;
                 }
 
                 canvas.drawCircle(edge + gridSize / 2 + gridSize * i, edge + gridSize / 2 + gridSize * j, gridSize / 2 - strokeWidth / 2, paint);
-                CheckWinner(i, j, type);
+                CheckWinner(i, j);
 
-                if (!over && CheckWinner(i, j, type)) {
+                if (!over && CheckWinner(i, j)) {
 
                     over = true;
 
@@ -201,7 +198,7 @@ public class ChessView extends View {
         return super.onTouchEvent(event);
     }
 
-    public boolean CheckWinner(int x, int y, int type) {
+    public boolean CheckWinner(int x, int y) {
 
         boolean[] eightPlace = new boolean[8];//8 different clockwise position away from center
         int[] fourRow = new int[4];//4 different opposite direction
@@ -209,7 +206,7 @@ public class ChessView extends View {
         for (int i = 0; i < win; i++) {
 
             //up
-            if (!eightPlace[0] && (y - i) >= 0 && flag[x][y - i] == type) {
+            if (!eightPlace[0] && (y - i) >= 0 && flag[x][y - i] == flag[x][y]) {
 
                 fourRow[0]++;
 
@@ -219,7 +216,7 @@ public class ChessView extends View {
             }
 
             //right-up
-            if (!eightPlace[1] && (y - i) >= 0 && (x + i) < grid && flag[x + i][y - i] == type) {
+            if (!eightPlace[1] && (y - i) >= 0 && (x + i) < grid && flag[x + i][y - i] == flag[x][y]) {
 
                 fourRow[1]++;
 
@@ -229,7 +226,7 @@ public class ChessView extends View {
             }
 
             //right
-            if (!eightPlace[2] && (x + i) < grid && flag[x + i][y] == type) {
+            if (!eightPlace[2] && (x + i) < grid && flag[x + i][y] == flag[x][y]) {
 
                 fourRow[2]++;
 
@@ -239,7 +236,7 @@ public class ChessView extends View {
             }
 
             //right-down
-            if (!eightPlace[3] && (x + i) < grid && (y + i) < grid && flag[x + i][y + i] == type) {
+            if (!eightPlace[3] && (x + i) < grid && (y + i) < grid && flag[x + i][y + i] == flag[x][y]) {
 
                 fourRow[3]++;
 
@@ -249,7 +246,7 @@ public class ChessView extends View {
             }
 
             //down
-            if (!eightPlace[4] && (y + i) < grid && flag[x][y + i] == type) {
+            if (!eightPlace[4] && (y + i) < grid && flag[x][y + i] == flag[x][y]) {
 
                 fourRow[0]++;
 
@@ -258,7 +255,7 @@ public class ChessView extends View {
             }
 
             //left-down
-            if (!eightPlace[5] && (x - i) >= 0 && (y + i) < grid && flag[x - i][y + i] == type) {
+            if (!eightPlace[5] && (x - i) >= 0 && (y + i) < grid && flag[x - i][y + i] == flag[x][y]) {
 
                 fourRow[1]++;
 
@@ -268,7 +265,7 @@ public class ChessView extends View {
             }
 
             //left
-            if (!eightPlace[6] && (x - i) >= 0 && flag[x - i][y] == type) {
+            if (!eightPlace[6] && (x - i) >= 0 && flag[x - i][y] == flag[x][y]) {
 
                 fourRow[2]++;
 
@@ -278,7 +275,7 @@ public class ChessView extends View {
             }
 
             //left-up
-            if (!eightPlace[7] && (y - i) >= 0 && (x - i) >= 0 && flag[x - i][y - i] == type) {
+            if (!eightPlace[7] && (y - i) >= 0 && (x - i) >= 0 && flag[x - i][y - i] == flag[x][y]) {
 
                 fourRow[3]++;
 
