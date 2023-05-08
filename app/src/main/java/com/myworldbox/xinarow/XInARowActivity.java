@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import static com.myworldbox.xinarow.ChessView.blackTerm;
+import static com.myworldbox.xinarow.ChessView.blackTurn;
 
 public class XInARowActivity extends MainActivity {
 
@@ -74,16 +74,16 @@ public class XInARowActivity extends MainActivity {
     @SuppressLint("SetTextI18n")
     public void ChangeText(View view) {
 
-        ChangeTerm();
+        ChangeTurn();
 
-        textView[0].setText(message + " term");
+        textView[0].setText(message + " turn");
         textView[1].setText("Black: " + ChessView.blackScore);
         textView[2].setText("White: " + ChessView.whiteScore);
     }
 
-    public static void ChangeTerm() {
+    public static void ChangeTurn() {
 
-        if (blackTerm) {
+        if (blackTurn) {
 
             message = "Black";
 

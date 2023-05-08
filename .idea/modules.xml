@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/XInARow.iml" filepath="$PROJECT_DIR$/.idea/XInARow.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/XInARow.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/XInARow.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/XInARow.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/XInARow.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/XInARow.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/XInARow.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/XInARow.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/XInARow.app.unitTest.iml" />
     </modules>
   </component>
 </project>

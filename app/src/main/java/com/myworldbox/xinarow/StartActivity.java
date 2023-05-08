@@ -13,15 +13,12 @@ public class StartActivity extends MainActivity {
         setContentView(R.layout.activity_start);
 
         //move to new activity when timer is ended
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                //move to next activity
-                startActivity(new Intent(StartActivity.this, MainActivity.class));
-                finish();
+            //move to next activity
+            startActivity(new Intent(StartActivity.this, MainActivity.class));
+            finish();
 
-            }
         }, 4000);
     }
 }

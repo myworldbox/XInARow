@@ -21,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import pl.droidsonroids.relinker.ApkLibraryInstaller;
 
 @SuppressLint("Registered")
-public class Function extends AppCompatActivity implements View.OnClickListener {
+abstract class Function extends AppCompatActivity implements View.OnClickListener {
 
     //declare variables for global use
 

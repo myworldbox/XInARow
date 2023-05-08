@@ -18,7 +18,7 @@ import static com.myworldbox.xinarow.Function.*;
 
 public class ChessView extends View {
 
-    static boolean blackTerm = true;//turn for players
+    static boolean blackTurn = true;//turn for players
 
     boolean over = false;
 
@@ -122,7 +122,7 @@ public class ChessView extends View {
 
                     over = true;
 
-                    if (blackTerm) {
+                    if (blackTurn) {
 
                         whiteScore ++;
 
@@ -179,7 +179,7 @@ public class ChessView extends View {
 
                 if (flag[gridX][gridY] == 0) {
 
-                    if (blackTerm) {
+                    if (blackTurn) {
 
                         flag[gridX][gridY] = 1;
 
@@ -188,7 +188,7 @@ public class ChessView extends View {
                         flag[gridX][gridY] = 2;
                     }
 
-                    blackTerm = !blackTerm;
+                    blackTurn = !blackTurn;
 
                     invalidate();
                 }
